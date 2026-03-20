@@ -1,0 +1,92 @@
+"use client"
+
+import Link from "next/link"
+import { Menu, Phone, X } from "lucide-react"
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+
+const navLinks = [
+  { href: "#about", label: "Giới thiệu" },
+  { href: "#products", label: "Gói ăn" },
+  { href: "#how-it-works", label: "Cách đặt hàng" },
+  { href: "#testimonials", label: "Khách hàng" },
+  { href: "#contact", label: "Liên hệ" },
+]
+
+export function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  return (
+    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm shadow-sm">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16 md:h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
+              <span className="text-primary-foreground font-bold text-lg">F</span>
+            </div>
+            <span className="text-xl font-bold text-primary">FITFOOD</span>
+          </Link>
+
+          {/* Desktop Nav */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-foreground/80 hover:text-primary font-medium transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+
+          {/* CTA & Phone */}
+          <div className="hidden md:flex items-center gap-4">
+            <a href="tel:1900633345" className="flex items-center gap-2 text-primary font-semibold">
+              <Phone className="w-4 h-4" />
+              1900 633 345
+            </a>
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-6">
+              Đặt Ngay
+            </Button>
+          </div>
+
+          {/* Mobile Menu Toggle */}
+          <button
+            className="lg:hidden p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden py-4 border-t border-border">
+            <nav className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="text-foreground/80 hover:text-primary font-medium transition-colors"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <a href="tel:1900633345" className="flex items-center gap-2 text-primary font-semibold">
+                <Phone className="w-4 h-4" />
+                1900 633 345
+              </a>
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-fit">
+                Đặt Ngay
+              </Button>
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  )
+}
