@@ -37,8 +37,9 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
-  
-  --gold-warm: #E66E33; /* Matches the secondary orange/gold in mockup */
+
+  --gold-warm: #E66E33;
+  /* Matches the secondary orange/gold in mockup */
 }
 
 .dark {
@@ -121,6 +122,7 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
@@ -128,7 +130,7 @@
 
 .nav-logo {
   font-family: var(--font-playfair), serif;
-  font-size: 1.7rem; 
+  font-size: 1.7rem;
   font-weight: 900;
   color: var(--gold-warm);
   letter-spacing: -0.5px;
@@ -140,7 +142,7 @@
   transform: scale(1.02);
 }
 
-.nav-logo span { 
-  color: #fff; 
-  font-style: italic; 
+.nav-logo span {
+  color: #fff;
+  font-style: italic;
 }
