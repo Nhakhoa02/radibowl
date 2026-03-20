@@ -6,7 +6,8 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
-  { href: "#about", label: "Giới thiệu" },
+  { href: "/menu", label: "Thực đơn" },
+  { href: "/about-us", label: "Giới thiệu" },
   { href: "#products", label: "Gói ăn" },
   { href: "#how-it-works", label: "Cách đặt hàng" },
   { href: "#testimonials", label: "Khách hàng" },
@@ -23,9 +24,9 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">F</span>
+              <span className="text-primary-foreground font-bold text-lg">R</span>
             </div>
-            <span className="text-xl font-bold text-primary">FITFOOD</span>
+            <span className="text-xl font-bold text-primary">RediBowl</span>
           </Link>
 
           {/* Desktop Nav */}
