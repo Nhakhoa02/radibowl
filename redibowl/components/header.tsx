@@ -6,9 +6,12 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
-  { href: "#about", label: "Về Chúng Tôi" },
-  { href: "#products", label: "Sản Phẩm" },
-  { href: "#contact", label: "Liên Hệ" },
+  { href: "/menu", label: "Thực đơn" },
+  { href: "/about-us", label: "Về chúng tôi" },
+  { href: "#products", label: "Gói ăn" },
+  { href: "#how-it-works", label: "Cách đặt hàng" },
+  { href: "#testimonials", label: "Khách hàng" },
+  { href: "#contact", label: "Liên hệ" },
 ]
 
 export function Header() {
@@ -20,7 +23,7 @@ export function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="nav-logo">
-             Redi<span>Bowl</span>
+            Redi<span>Bowl</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -58,30 +61,32 @@ export function Header() {
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border">
-            <nav className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-foreground/80 hover:text-primary font-medium transition-colors"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <a href="tel:1900633345" className="flex items-center gap-2 text-primary font-semibold">
-                <Phone className="w-4 h-4" />
-                1900 633 345
-              </a>
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-fit">
-                Đặt Ngay
-              </Button>
-            </nav>
-          </div>
-        )}
-      </div>
-    </header>
+        {
+          mobileMenuOpen && (
+            <div className="lg:hidden py-4 border-t border-border">
+              <nav className="flex flex-col gap-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-foreground/80 hover:text-primary font-medium transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <a href="tel:1900633345" className="flex items-center gap-2 text-primary font-semibold">
+                  <Phone className="w-4 h-4" />
+                  1900 633 345
+                </a>
+                <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full w-fit">
+                  Đặt Ngay
+                </Button>
+              </nav>
+            </div>
+          )
+        }
+      </div >
+    </header >
   )
 }
