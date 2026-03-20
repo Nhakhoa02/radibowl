@@ -8,9 +8,9 @@ import { Button } from "@/components/ui/button"
 const navLinks = [
   { href: "/menu", label: "Thực đơn" },
   { href: "/about-us", label: "Về chúng tôi" },
-  { href: "#products", label: "Gói ăn" },
-  { href: "#how-it-works", label: "Cách đặt hàng" },
-  { href: "#testimonials", label: "Khách hàng" },
+  // { href: "#products", label: "Gói ăn" },
+  // { href: "#how-it-works", label: "Cách đặt hàng" },
+  // { href: "#testimonials", label: "Khách hàng" },
   { href: "#contact", label: "Liên hệ" },
 ]
 
