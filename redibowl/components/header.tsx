@@ -6,26 +6,21 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
-  { href: "#about", label: "Giới thiệu" },
-  { href: "#products", label: "Gói ăn" },
-  { href: "#how-it-works", label: "Cách đặt hàng" },
-  { href: "#testimonials", label: "Khách hàng" },
-  { href: "#contact", label: "Liên hệ" },
+  { href: "#about", label: "Về Chúng Tôi" },
+  { href: "#products", label: "Sản Phẩm" },
+  { href: "#contact", label: "Liên Hệ" },
 ]
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/10 backdrop-blur-md py-4">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">F</span>
-            </div>
-            <span className="text-xl font-bold text-primary">FITFOOD</span>
+          <Link href="/" className="nav-logo">
+             Redi<span>Bowl</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -34,7 +29,7 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-foreground/80 hover:text-primary font-medium transition-colors"
+                className="text-white/80 hover:text-white font-black transition-all text-xs uppercase tracking-widest"
               >
                 {link.label}
               </Link>
