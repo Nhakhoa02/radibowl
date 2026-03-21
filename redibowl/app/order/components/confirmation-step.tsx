@@ -41,13 +41,13 @@ export function ConfirmationStep({
   updateOrderState,
   onPrevious,
 }: ConfirmationStepProps) {
-  const comboPrice = orderState.selectedCombo?.price || 0
+  const comboPrice = orderState.selectedCombo?.id === "daily" ? 0 : (orderState.selectedCombo?.price || 0)
   const dishesTotal = orderState.selectedDishes.reduce(
     (sum, item) => sum + item.dish.price * item.quantity,
     0
   )
   const subtotal = comboPrice + dishesTotal
-  const shippingFee = 35000
+  const shippingFee = 5000
   const discount = 0
   const total = subtotal + shippingFee - discount
 
@@ -90,7 +90,7 @@ export function ConfirmationStep({
                     </div>
                   </div>
                   <div className="text-lg font-semibold text-foreground">
-                    {formatPrice(orderState.selectedCombo.price)}
+                    {orderState.selectedCombo.id === "daily" ? "Theo món" : formatPrice(orderState.selectedCombo.price)}
                   </div>
                 </div>
               </div>
@@ -101,11 +101,16 @@ export function ConfirmationStep({
                 <div className="text-xs font-semibold text-primary uppercase mb-3">
                   MÓN ĂN ĐÃ CHỌN
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-3">
                   {orderState.selectedDishes.map((item) => (
-                    <div key={item.dish.id} className="flex justify-between text-sm">
-                      <span className="text-foreground">{item.dish.name}</span>
-                      <span className="text-muted-foreground">x{item.quantity}</span>
+                    <div key={item.dish.id} className="flex justify-between items-center text-sm">
+                      <div className="flex-1">
+                        <div className="text-foreground font-medium">{item.dish.name}</div>
+                        <div className="text-muted-foreground text-xs">x{item.quantity}</div>
+                      </div>
+                      <div className="font-semibold text-foreground italic">
+                        {formatPrice(item.dish.price * item.quantity)}
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -171,8 +176,8 @@ export function ConfirmationStep({
                     key={method.id}
                     onClick={() => updateOrderState({ paymentMethod: method.id })}
                     className={`w-full flex items-center gap-4 p-4 rounded-xl border-2 transition-all ${isSelected
-                        ? "border-primary bg-primary/5"
-                        : "border-transparent bg-muted hover:bg-muted/80"
+                      ? "border-primary bg-primary/5"
+                      : "border-transparent bg-muted hover:bg-muted/80"
                       }`}
                   >
                     <Icon className="w-6 h-6 text-muted-foreground" />
