@@ -85,7 +85,7 @@ export function HeroSection() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-card text-card hover:bg-card/20 rounded-full px-8 text-lg"
+                  className="border-card text-card hover:bg-card/20 rounded-full px-8 text-lg text-black"
                 >
                   Tư Vấn
                 </Button>
