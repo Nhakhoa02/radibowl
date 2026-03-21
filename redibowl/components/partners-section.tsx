@@ -18,67 +18,59 @@ const clients = [
 
 export function PartnersSection() {
   return (
-    <section className="py-20 bg-secondary">
-      <div className="container mx-auto px-4">
-        {/* Partners */}
-        <div className="mb-16">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-primary font-semibold uppercase tracking-wider">Đối tác</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
-              Đối tác của chúng tôi
-            </h2>
-            <p className="text-muted-foreground mt-4">
-              Chúng tôi hợp tác với các nhà cung cấp hàng đầu để đảm bảo chất lượng trải nghiệm tốt nhất
-            </p>
-          </div>
+    <section className="py-24 bg-secondary overflow-hidden">
+      <div className="container mx-auto px-4 mb-16 text-center max-w-3xl">
+        <span className="text-primary font-bold uppercase tracking-[0.3cm] block mb-4 text-xs">Đối tác & Khách hàng</span>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+          Đồng hành cùng RediBowl
+        </h2>
+        <p className="text-white/80 text-lg text-balance">
+          Chúng tôi tự hào là lựa chọn hàng đầu của sinh viên và các đối tác tại VGU.
+        </p>
+      </div>
 
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center">
-            {partners.map((partner) => (
+      <div className="space-y-4">
+        {/* Row 1: Partners - Rolling Left to Right */}
+        <div className="relative flex overflow-hidden group border-y border-white/10">
+          <div className="flex animate-scroll-right whitespace-nowrap py-0">
+            {[...partners, ...partners, ...partners, ...partners, ...partners].map((partner, i) => (
               <div 
-                key={partner.name} 
-                className="bg-card rounded-xl p-6 flex items-center justify-center h-24 hover:shadow-md transition-shadow"
+                key={`${partner.name}-${i}`} 
+                className="flex items-center justify-center shrink-0 w-64 h-32 md:h-40 border-r border-white/10 hover:bg-white/5 transition-colors"
               >
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-12 max-w-full object-contain opacity-60 hover:opacity-100 transition-opacity"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Clients */}
-        <div>
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-primary font-semibold uppercase tracking-wider">Khách hàng</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2">
-              Khách hàng doanh nghiệp
-            </h2>
-            <p className="text-muted-foreground mt-4">
-              Fitfood tự hào là lựa chọn ưu tiên hàng đầu của các doanh nghiệp lớn trong và ngoài nước
-            </p>
-          </div>
-
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center">
-            {clients.map((client) => (
+        {/* Row 2: Clients - Rolling Left to Right */}
+        <div className="relative flex overflow-hidden group border-b border-white/10">
+          <div className="flex animate-scroll-right whitespace-nowrap py-0">
+            {[...clients, ...clients, ...clients, ...clients, ...clients].map((client, i) => (
               <div 
-                key={client.name} 
-                className="bg-card rounded-xl p-6 flex items-center justify-center h-24 hover:shadow-md transition-shadow cursor-pointer"
+                key={`${client.name}-${i}`} 
+                className="flex items-center justify-center shrink-0 w-64 h-32 md:h-40 border-r border-white/10 hover:bg-white/5 transition-colors"
               >
                 <img
                   src={client.logo}
                   alt={client.name}
-                  className="max-h-12 max-w-full object-contain opacity-60 hover:opacity-100 transition-opacity"
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
             ))}
           </div>
-
-          <p className="text-center text-muted-foreground mt-8">
-            Liên hệ <a href="mailto:business@fitfood.vn" className="text-primary font-semibold hover:underline">business@fitfood.vn</a> để đặt tiệc ngay
-          </p>
         </div>
+      </div>
+
+      <div className="container mx-auto px-4 mt-16 text-center">
+        <p className="text-sm text-white/60">
+          Liên hệ hợp tác: <a href="mailto:info@redibowl.vn" className="text-white font-bold hover:underline">info@redibowl.vn</a>
+        </p>
       </div>
     </section>
   )
