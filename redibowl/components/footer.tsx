@@ -3,30 +3,29 @@ import Link from "next/link"
 
 const footerLinks = {
   services: [
-    { label: "Gói FIT", href: "#" },
-    { label: "Gói FULL", href: "#" },
-    { label: "Gói MEAT", href: "#" },
-    { label: "Gói SLIM", href: "#" },
-    { label: "Gói CHAY", href: "#" },
+    { label: "Gói Ngày", href: "/menu" },
+    { label: "Gói Tuần", href: "/menu" },
+    { label: "Gói Tháng", href: "/menu" },
+    { label: "Thực đơn tuần này", href: "/menu" },
   ],
   company: [
-    { label: "Về chúng tôi", href: "#about" },
-    { label: "Blog", href: "#" },
-    { label: "Tuyển dụng", href: "#" },
+    { label: "Về chúng tôi", href: "/about" },
+    // { label: "Blog", href: "#" },
+    // { label: "Tuyển dụng", href: "#" },
     { label: "Liên hệ", href: "#contact" },
   ],
   support: [
     { label: "FAQ", href: "#" },
-    { label: "Chính sách giao hàng", href: "#" },
-    { label: "Điều khoản sử dụng", href: "#" },
-    { label: "Chính sách bảo mật", href: "#" },
+    // { label: "Chính sách giao hàng", href: "#" },
+    // { label: "Điều khoản sử dụng", href: "#" },
+    // { label: "Chính sách bảo mật", href: "#" },
   ],
 }
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com/fitfoodvn", label: "Facebook" },
-  { icon: Instagram, href: "https://instagram.com/fitfoodvn", label: "Instagram" },
-  { icon: Youtube, href: "https://youtube.com/fitfoodvn", label: "Youtube" },
+  { icon: Facebook, href: "https://facebook.com/redibowlvn", label: "Facebook" },
+  { icon: Instagram, href: "https://instagram.com/redibowlvn", label: "Instagram" },
+  { icon: Youtube, href: "https://youtube.com/redibowlvn", label: "Youtube" },
 ]
 
 export function Footer() {
@@ -38,28 +37,28 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">F</span>
+                <span className="text-primary-foreground font-bold text-lg">R</span>
               </div>
-              <span className="text-xl font-bold text-card">FITFOOD</span>
+              <span className="text-xl font-bold text-card">REDIBOWL</span>
             </Link>
             <p className="text-card/70 leading-relaxed mb-6 max-w-sm">
-              Fitfood VN - Nhà cung cấp gói ăn healthy lớn nhất Saigon. 
-              Giải pháp bữa ăn lành mạnh giao tận nơi cho lối sống khỏe mạnh.
+              RediBowl - Dự án khởi nghiệp bởi nhóm 14 sinh viên VGU.
+              Mang đến bữa ăn dinh dưỡng, tiện lợi và hợp túi tiền cho cộng đồng sinh viên.
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3">
-              <a href="tel:1900633345" className="flex items-center gap-3 text-card/80 hover:text-primary transition-colors">
+              <a href="tel:0901234567" className="flex items-center gap-3 text-card/80 hover:text-primary transition-colors">
                 <Phone className="w-5 h-5" />
-                1900 633 345
+                090 123 4567
               </a>
-              <a href="mailto:info@fitfood.vn" className="flex items-center gap-3 text-card/80 hover:text-primary transition-colors">
+              <a href="mailto:info@redibowl.vn" className="flex items-center gap-3 text-card/80 hover:text-primary transition-colors">
                 <Mail className="w-5 h-5" />
-                info@fitfood.vn
+                info@redibowl.vn
               </a>
               <div className="flex items-start gap-3 text-card/80">
                 <MapPin className="w-5 h-5 shrink-0 mt-0.5" />
-                <span>123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</span>
+                <span>VGU Campus, Ring Road 4, Thới Hòa, Bến Cát, Bình Dương</span>
               </div>
             </div>
 
@@ -82,7 +81,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Gói ăn</h4>
+            <h4 className="text-lg font-semibold mb-4">Sản phẩm</h4>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
@@ -96,7 +95,7 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-lg font-semibold mb-4">Công ty</h4>
+            <h4 className="text-lg font-semibold mb-4">Teams</h4>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.label}>
@@ -126,10 +125,10 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-card/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-card/60 text-sm">
-            © 2024 Fitfood Vietnam. All rights reserved.
+            © 2026 RediBowl VGU. All rights reserved.
           </p>
           <p className="text-card/60 text-sm">
-            Made with ❤️ in Saigon
+            Made with ❤️ by 14 VGU-ers!
           </p>
         </div>
       </div>

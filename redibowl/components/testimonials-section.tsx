@@ -8,19 +8,19 @@ const testimonials = [
     name: "Nguyễn Thị Mai",
     role: "Giảm 8kg trong 2 tháng",
     avatar: "/avatar-1.jpg",
-    content: "Fitfood đã thay đổi hoàn toàn cách tôi ăn uống. Không còn lo lắng về việc nấu nướng, chỉ cần hâm nóng và thưởng thức. Sau 2 tháng, tôi đã giảm được 8kg một cách lành mạnh!",
+    content: "RediBowl đã thay đổi hoàn toàn cách tôi ăn uống. Không còn lo lắng về việc nấu nướng, chỉ cần hâm nóng và thưởng thức. Sau 2 tháng, tôi đã giảm được 8kg một cách lành mạnh!",
   },
   {
     name: "Trần Văn Hùng",
     role: "Tăng 5kg cơ nạc",
     avatar: "/avatar-2.jpg",
-    content: "Gói MEAT của Fitfood là lựa chọn hoàn hảo cho người tập gym như tôi. Lượng protein đầy đủ, khẩu phần vừa đủ. Đã tăng được 5kg cơ nạc sau 3 tháng sử dụng.",
+    content: "Gói MEAT của RediBowl là lựa chọn hoàn hảo cho người tập gym như tôi. Lượng protein đầy đủ, khẩu phần vừa đủ. Đã tăng được 5kg cơ nạc sau 3 tháng sử dụng.",
   },
   {
     name: "Lê Thị Hương",
     role: "Mẹ bỉm sữa bận rộn",
     avatar: "/avatar-3.jpg",
-    content: "Với công việc bận rộn và con nhỏ, Fitfood giúp tôi tiết kiệm thời gian mà vẫn đảm bảo sức khỏe. Đồ ăn ngon, đa dạng và giao hàng đúng giờ. Highly recommend!",
+    content: "Với công việc bận rộn và con nhỏ, RediBowl giúp tôi tiết kiệm thời gian mà vẫn đảm bảo sức khỏe. Đồ ăn ngon, đa dạng và giao hàng đúng giờ. Highly recommend!",
   },
 ]
 
@@ -40,7 +40,7 @@ export function TestimonialsSection() {
             Câu chuyện khách hàng
           </h2>
           <p className="text-muted-foreground text-lg">
-            Những câu chuyện thành công từ khách hàng thân yêu của Fitfood
+            Những câu chuyện thành công từ khách hàng thân yêu của RediBowl
           </p>
         </div>
 

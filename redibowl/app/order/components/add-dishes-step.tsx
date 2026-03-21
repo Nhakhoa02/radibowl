@@ -14,34 +14,50 @@ interface AddDishesStepProps {
 
 const dishes: Dish[] = [
   {
-    id: "poke-bowl",
-    name: "Salmon Poke Bowl Deluxe",
-    description: "Fresh Atlantic salmon, organic avocado, edamame, and our signature ginger-soy dressing over premium sushi rice.",
-    price: 185000,
-    image: "/product-slim.jpg",
-    badge: "CHEF'S CHOICE",
-  },
-  {
-    id: "truffle-fries",
-    name: "Truffle Fries",
-    description: "Hand-cut potatoes tossed in white truffle oil and sea salt.",
-    price: 65000,
+    id: "ga-nuong",
+    name: "Cơm Gà Nướng",
+    description: "Gà nướng mật ong, cơm gạo lứt, rau luộc, salad dưa leo. Protein cao, ít mỡ.",
+    price: 39000,
     image: "/product-fit1.jpg",
+    badge: "Best seller",
   },
   {
-    id: "bruschetta",
-    name: "Classic Bruschetta",
-    description: "Toasted sourdough with vine-ripened tomatoes and basil.",
-    price: 55000,
-    image: "/product-fit2.jpg",
+    id: "bo-ap-chao",
+    name: "Cơm Bò Áp Chảo",
+    description: "Bò áp chảo sốt tiêu, cơm trắng, bông cải xanh, cà rốt luộc.",
+    price: 45000,
+    image: "/product-meat.jpg",
+    badge: "Mới",
   },
   {
-    id: "lava-cake",
-    name: "Lava Cake Trio",
-    description: "Three miniature molten chocolate cakes with salted caramel drizzle and fresh berries.",
-    price: 120000,
+    id: "ca-hoi-chanh",
+    name: "Cơm Cá Hồi Sốt Chanh",
+    description: "Cá hồi hấp sốt chanh dầu, rau quinoa, salad hỗn hợp, omega-3 dồi dào.",
+    price: 49000,
+    image: "/product-slim.jpg",
+  },
+  {
+    id: "trung-dau-hu",
+    name: "Bowl Trứng & Đậu Hũ",
+    description: "Trứng luộc, đậu hũ sốt tương, gạo lứt, rau muống xào tỏi. Thích hợp ăn chay.",
+    price: 32000,
     image: "/product-chay.jpg",
-    badge: "SWEET FINALE",
+    badge: "Chay",
+  },
+  {
+    id: "tom-sot-ca",
+    name: "Cơm Tôm Sốt Cà",
+    description: "Tôm chiên sốt cà chua, cơm gạo lứt, đậu que luộc, salad.",
+    price: 42000,
+    image: "/product-full.jpg",
+  },
+  {
+    id: "ga-quinoa",
+    name: "Salad Gà Quinoa",
+    description: "Ức gà hấp, hạt quinoa, rau lá xanh, cà chua bi, sốt mù tạt mật ong.",
+    price: 43000,
+    image: "/product-lunch.jpg",
+    badge: "Low-carb",
   },
 ]
 
@@ -97,7 +113,7 @@ export function AddDishesStep({
           Thêm Món & Ghi Chú
         </h1>
         <p className="text-muted-foreground max-w-2xl">
-          Customize your culinary experience with our premium selection.
+          Tùy chỉnh bữa ăn của bạn với danh sách món phụ bổ sung đầy đủ dinh dưỡng.
         </p>
       </div>
 
@@ -179,7 +195,7 @@ export function AddDishesStep({
         <textarea
           value={orderState.notes}
           onChange={(e) => updateOrderState({ notes: e.target.value })}
-          placeholder="Tell us about allergies, delivery preferences, or special requests..."
+          placeholder="Ghi chú về dị ứng, sở thích giao hàng hoặc yêu cầu đặc biệt..."
           className="w-full h-32 p-4 bg-muted rounded-xl resize-none text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20"
         />
         <div className="text-right text-xs text-muted-foreground mt-2">
@@ -193,13 +209,13 @@ export function AddDishesStep({
           className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span className="font-medium">Previous Step</span>
+          <span className="font-medium">Quay lại</span>
         </button>
         <Button
           onClick={onNext}
           className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6"
         >
-          Next: Shipping Details
+          Tiếp theo: Thông tin giao hàng
           <ArrowRight className="w-5 h-5 ml-2" />
         </Button>
       </div>

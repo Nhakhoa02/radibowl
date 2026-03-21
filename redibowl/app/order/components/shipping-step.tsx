@@ -13,10 +13,8 @@ interface ShippingStepProps {
 }
 
 const buildings = [
-  "Tòa A - KTX Khu A",
-  "Tòa B - KTX Khu B",
-  "Tòa C - KTX Khu C",
-  "215 Lê Lợi, Q1",
+  "Tòa A - KTX Cam",
+  "Tòa B - KTX Xanh",
   "Khác",
 ]
 
@@ -98,7 +96,7 @@ export function ShippingStep({
                 onChange={(e) => updateShippingInfo("building", e.target.value)}
                 className="w-full px-4 py-3 bg-muted rounded-xl text-foreground appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20"
               >
-                <option value="">Chọn tòa nhà</option>
+                <option value="">Chọn tòa KTX</option>
                 {buildings.map((building) => (
                   <option key={building} value={building}>
                     {building}
@@ -156,7 +154,7 @@ export function ShippingStep({
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
         <div className="absolute inset-0 p-6 flex flex-col justify-center">
           <div className="text-xs font-semibold text-white/80 uppercase tracking-wider mb-1">
-            QUICK TIP
+            QUICK TIP!
           </div>
           <p className="text-white font-medium max-w-xs">
             Ghi chú rõ ràng giúp shipper tìm bạn nhanh hơn!
@@ -170,14 +168,14 @@ export function ShippingStep({
           className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span className="font-medium">Previous</span>
+          <span className="font-medium">Quay lại</span>
         </button>
         <Button
           onClick={onNext}
           disabled={!isValid}
           className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 py-6 disabled:opacity-50"
         >
-          Next
+          Tiếp theo
           <ArrowRight className="w-5 h-5 ml-2" />
         </Button>
       </div>

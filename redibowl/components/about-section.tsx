@@ -1,10 +1,10 @@
 import { Leaf, Heart, Award, Users } from "lucide-react"
 
 const stats = [
-  { icon: Users, value: "10,000+", label: "Khách hàng" },
+  { icon: Users, value: "14", label: "Sinh viên sáng lập" },
   { icon: Award, value: "100+", label: "Món ăn" },
-  { icon: Heart, value: "5+", label: "Năm kinh nghiệm" },
-  { icon: Leaf, value: "100%", label: "Nguyên liệu sạch" },
+  { icon: Heart, value: "100%", label: "Tận tâm" },
+  { icon: Leaf, value: "Clean", label: "Nguyên liệu" },
 ]
 
 export function AboutSection() {
@@ -17,13 +17,13 @@ export function AboutSection() {
             <div className="aspect-square rounded-3xl overflow-hidden">
               <img
                 src="/about-image.jpg"
-                alt="Fitfood healthy meals"
+                alt="RediBowl healthy meals"
                 className="w-full h-full object-cover"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-2xl shadow-lg">
-              <p className="text-3xl font-bold">5+</p>
-              <p className="text-sm">Năm kinh nghiệm</p>
+              <p className="text-3xl font-bold text-white">14</p>
+              <p className="text-sm">Thành viên VGU</p>
             </div>
           </div>
 
@@ -31,17 +31,13 @@ export function AboutSection() {
           <div>
             <span className="text-primary font-semibold uppercase tracking-wider">Về chúng tôi</span>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mt-2 mb-6">
-              FITFOOD VIETNAM
+              REDIBOWL VGU
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Fitfood VN cung cấp các phần ăn lành mạnh hàng tuần giúp bạn duy trì một lối sống khỏe. 
-              Chúng tôi tập trung vào chế độ ăn cân bằng được thiết kế chuyên biệt để hỗ trợ bạn 
-              kiểm soát cân nặng một cách hiệu quả nhất.
+              Chúng tôi là một nhóm gồm 14 sinh viên từ VGU, cùng chung niềm đam mê mang lại những bữa ăn chất lượng cho cộng đồng sinh viên. RediBowl không chỉ là một dịch vụ ăn uống, mà là giải pháp giúp bạn duy trì sức khỏe trong guồng quay học tập bận rộn.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Nếu bạn đang tìm kiếm những bữa ăn ngon và tốt cho sức khỏe được chuẩn bị sẵn ở Saigon 
-              thì Fitfood là một lựa chọn tối ưu. Thực đơn đa dạng với hơn 100 món của chúng tôi có 
-              thể giúp bạn thưởng thức mà không ngán trong hơn 1 tháng.
+              Hiểu rõ những khó khăn của sinh viên khi tìm kiếm bữa ăn vừa ngon, vừa sạch lại hợp túi tiền ngay tại campus, chúng tôi đã tạo ra RediBowl. Với thực đơn đa dạng và dịch vụ giao tận phòng ký túc xá, chúng tôi cam kết mang đến sự tiện lợi tối đa cho bạn.
             </p>
 
             {/* Stats */}

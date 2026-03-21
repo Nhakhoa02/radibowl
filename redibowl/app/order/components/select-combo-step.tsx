@@ -15,14 +15,14 @@ const combos: Combo[] = [
   {
     id: "daily",
     name: "Gói Ngày",
-    description: "Đặt từng ngày",
+    description: "Linh hoạt cho sinh viên bận rộn",
     price: 39000,
-    image: "/product-fit3.jpg",
+    image: "/product-fit1.jpg",
   },
   {
     id: "weekly",
     name: "Gói Tuần",
-    description: "5 bữa / tuần",
+    description: "5 bữa trưa từ Thứ 2 - Thứ 6",
     price: 185000,
     image: "/product-full.jpg",
     popular: true,
@@ -30,9 +30,9 @@ const combos: Combo[] = [
   {
     id: "monthly",
     name: "Gói Tháng",
-    description: "20 bữa / tháng",
+    description: "20 bữa cơm trưa dinh dưỡng",
     price: 680000,
-    image: "/product-meats.jpg",
+    image: "/product-lunch.jpg",
   },
 ]
 
@@ -66,13 +66,12 @@ export function SelectComboStep({
       <div className="grid md:grid-cols-3 gap-6">
         {combos.map((combo) => {
           const isSelected = orderState.selectedCombo?.id === combo.id
-          
+
           return (
             <div
               key={combo.id}
-              className={`bg-white rounded-2xl overflow-hidden shadow-sm transition-all hover:shadow-md ${
-                isSelected ? "ring-2 ring-primary" : ""
-              }`}
+              className={`bg-white rounded-2xl overflow-hidden shadow-sm transition-all hover:shadow-md ${isSelected ? "ring-2 ring-primary" : ""
+                }`}
             >
               <div className="relative aspect-[4/3]">
                 <Image
@@ -100,11 +99,10 @@ export function SelectComboStep({
                 </div>
                 <Button
                   variant={isSelected ? "default" : "outline"}
-                  className={`w-full rounded-full ${
-                    isSelected
-                      ? "bg-primary hover:bg-primary/90"
-                      : "border-primary text-primary hover:bg-primary/10"
-                  }`}
+                  className={`w-full rounded-full ${isSelected
+                    ? "bg-primary hover:bg-primary/90"
+                    : "border-primary text-primary hover:bg-primary/10"
+                    }`}
                   onClick={() => handleSelectCombo(combo)}
                 >
                   {isSelected ? "Đã Chọn" : "Chọn Combo"}
@@ -143,7 +141,7 @@ export function SelectComboStep({
           </div>
         </div>
       )}
-      
+
       {orderState.selectedCombo && <div className="h-32" />}
     </div>
   )

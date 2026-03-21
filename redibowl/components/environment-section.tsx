@@ -14,7 +14,7 @@ const initiatives = [
   {
     icon: UtensilsCrossed,
     title: "Giảm thiểu rác thải",
-    description: "Fitfood chỉ cung cấp 01 bộ muỗng nĩa mỗi ngày để giảm thiểu rác thải nhựa",
+    description: "RediBowl chỉ cung cấp 01 bộ muỗng nĩa mỗi ngày để giảm thiểu rác thải nhựa",
   },
 ]
 
@@ -52,7 +52,7 @@ export function EnvironmentSection() {
             <div className="aspect-square rounded-3xl overflow-hidden">
               <img
                 src="/environment.jpg"
-                alt="Fitfood environment initiatives"
+                alt="RediBowl environment initiatives"
                 className="w-full h-full object-cover"
               />
             </div>

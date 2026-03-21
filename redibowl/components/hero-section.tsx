@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
@@ -19,43 +20,51 @@ const slides = [
   },
   {
     id: 3,
-    title: "Nhà cung cấp bữa ăn sạch lớn nhất Sài Gòn",
-    subtitle: "Hơn 10.000 khách hàng tin tưởng lựa chọn",
+    title: "Ăn ngon, sống khoẻ — mỗi ngày",
+    subtitle: "RediBowl cung cấp bữa ăn dinh dưỡng, tiện lợi và hợp túi tiền, được giao tận phòng ký túc xá cho sinh viên VGU.",
     image: "/hero-3.jpg",
   },
 ]
 
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
 
   useEffect(() => {
+    if (isPaused) return
+
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
     }, 5000)
     return () => clearInterval(timer)
-  }, [])
+  }, [isPaused])
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length)
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
 
   return (
-    <section className="relative h-screen min-h-[600px] overflow-hidden">
+    <section
+      className="relative h-screen min-h-[600px] overflow-hidden"
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
       {/* Slides */}
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide
+            ? "opacity-100 z-10 pointer-events-auto"
+            : "opacity-0 z-0 pointer-events-none"
+            }`}
         >
           {/* Background Image */}
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${slide.image})` }}
           />
           {/* Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-foreground/80 via-foreground/50 to-transparent" />
-          
+
           {/* Content */}
           <div className="relative h-full container mx-auto px-4 flex items-center">
             <div className="max-w-2xl text-card">
@@ -66,15 +75,16 @@ export function HeroSection() {
                 {slide.subtitle}
               </p>
               <div className="flex flex-wrap gap-4">
-                <Button 
-                  size="lg" 
+                <Button
+                  size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full px-8 text-lg"
+                  asChild
                 >
-                  Đặt Ngay
+                  <Link href="/order">Đặt Ngay</Link>
                 </Button>
-                <Button 
-                  size="lg" 
-                  variant="outline" 
+                <Button
+                  size="lg"
+                  variant="outline"
                   className="border-card text-card hover:bg-card/20 rounded-full px-8 text-lg"
                 >
                   Tư Vấn
@@ -88,30 +98,29 @@ export function HeroSection() {
       {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-card/30 hover:bg-card/50 rounded-full flex items-center justify-center transition-colors"
+        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-card/30 hover:bg-card/50 rounded-full flex items-center justify-center transition-colors z-20"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-6 h-6 text-card" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-card/30 hover:bg-card/50 rounded-full flex items-center justify-center transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-card/30 hover:bg-card/50 rounded-full flex items-center justify-center transition-colors z-20"
         aria-label="Next slide"
       >
         <ChevronRight className="w-6 h-6 text-card" />
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-20">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentSlide 
-                ? "bg-primary w-8" 
-                : "bg-card/50 hover:bg-card/80"
-            }`}
+            className={`w-3 h-3 rounded-full transition-all ${index === currentSlide
+              ? "bg-primary w-8"
+              : "bg-card/50 hover:bg-card/80"
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

@@ -48,9 +48,9 @@ export function PartnersSection() {
           </div>
         </div>
 
-        {/* Row 2: Clients - Rolling Left to Right */}
+        {/* Row 2: Clients - Rolling Right to Left */}
         <div className="relative flex overflow-hidden group border-b border-white/10">
-          <div className="flex animate-scroll-right whitespace-nowrap py-0">
+          <div className="flex animate-scroll-left whitespace-nowrap py-0">
             {[...clients, ...clients, ...clients, ...clients, ...clients].map((client, i) => (
               <div
                 key={`${client.name}-${i}`}

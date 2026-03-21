@@ -17,7 +17,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Fitfood VN - Nhà cung cấp gói ăn healthy lớn nhất Saigon',
+  title: 'RediBowl VN - Nhà cung cấp gói ăn healthy lớn nhất Saigon',
   description: 'Giải pháp HEALTHY FOOD giao tận nơi. Kế hoạch bữa ăn hàng tuần cho một lối sống lành mạnh.',
   generator: 'v0.app',
   icons: {

@@ -8,13 +8,13 @@ const steps = [
   },
   {
     icon: ChefHat,
-    title: "Fitfood nấu",
+    title: "RediBowl nấu",
     description: "Chúng tôi lựa chọn những nguyên liệu tốt nhất và nấu trong bếp công nghiệp hiện đại",
   },
   {
     icon: Truck,
     title: "Giao hàng",
-    description: "Đội ngũ giao hàng của Fitfood sẽ giao tận nơi các phần ăn cho bạn mỗi ngày",
+    description: "Đội ngũ giao hàng của RediBowl sẽ giao tận nơi các phần ăn cho bạn mỗi ngày",
   },
   {
     icon: Utensils,
@@ -44,19 +44,19 @@ export function HowItWorks() {
                 <div className="hidden lg:block absolute top-12 left-1/2 w-full h-0.5 bg-primary/20" />
               )}
               
-              <div className="bg-card rounded-2xl p-8 text-center relative z-10 hover:shadow-lg transition-shadow">
+              <div className="bg-card rounded-2xl p-8 text-center relative z-10 hover:shadow-lg transition-shadow h-full flex flex-col">
                 {/* Step Number */}
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">
                   {index + 1}
                 </div>
                 
                 {/* Icon */}
-                <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6">
+                <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center mx-auto mb-6 shrink-0">
                   <step.icon className="w-10 h-10 text-primary" />
                 </div>
                 
                 <h3 className="text-xl font-bold text-foreground mb-3">{step.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                <p className="text-muted-foreground leading-relaxed flex-grow">{step.description}</p>
               </div>
             </div>
           ))}

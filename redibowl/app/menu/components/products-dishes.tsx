@@ -102,15 +102,15 @@ export function ProductsDishes() {
 
               {/* Content Area */}
               <div className="p-6">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors line-clamp-1">
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-xl font-bold group-hover:text-primary transition-colors leading-tight pr-4">
                     {dish.name}
                   </h3>
-                  <span className="text-primary font-bold">
+                  <span className="text-primary font-bold shrink-0">
                     {dish.price}
                   </span>
                 </div>
-                <p className="text-muted-foreground text-sm mb-6 line-clamp-2 h-10">
+                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
                   {dish.description}
                 </p>
                 <div className="flex items-center gap-3 pt-4 border-t border-border/50">

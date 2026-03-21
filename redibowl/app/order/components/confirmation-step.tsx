@@ -48,11 +48,11 @@ export function ConfirmationStep({
   )
   const subtotal = comboPrice + dishesTotal
   const shippingFee = 35000
-  const discount = 50000
+  const discount = 0
   const total = subtotal + shippingFee - discount
 
   const handlePlaceOrder = () => {
-    alert("Đơn hàng của bạn đã được đặt thành công! Cảm ơn bạn đã tin tưởng Fitfood.")
+    alert("Đơn hàng của bạn đã được đặt thành công! Cảm ơn bạn đã tin tưởng RediBowl.")
   }
 
   return (
@@ -165,16 +165,15 @@ export function ConfirmationStep({
               {paymentMethods.map((method) => {
                 const isSelected = orderState.paymentMethod === method.id
                 const Icon = method.icon
-                
+
                 return (
                   <button
                     key={method.id}
                     onClick={() => updateOrderState({ paymentMethod: method.id })}
-                    className={`w-full flex items-center gap-4 p-4 rounded-xl border-2 transition-all ${
-                      isSelected
+                    className={`w-full flex items-center gap-4 p-4 rounded-xl border-2 transition-all ${isSelected
                         ? "border-primary bg-primary/5"
                         : "border-transparent bg-muted hover:bg-muted/80"
-                    }`}
+                      }`}
                   >
                     <Icon className="w-6 h-6 text-muted-foreground" />
                     <div className="flex-1 text-left">
@@ -229,7 +228,7 @@ export function ConfirmationStep({
               Hoàn tất đặt hàng
             </Button>
             <p className="text-xs text-muted-foreground text-center mt-4">
-              Bằng cách nhấn đặt hàng, bạn đồng ý với các Điều khoản & Chính sách của Fitfood.
+              Bằng cách nhấn đặt hàng, bạn đồng ý với các Điều khoản & Chính sách của RediBowl.
             </p>
           </div>
 
@@ -256,7 +255,7 @@ export function ConfirmationStep({
           className="flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span className="font-medium">Previous</span>
+          <span className="font-medium">Quay lại</span>
         </button>
       </div>
     </div>
