@@ -3,13 +3,14 @@ import Link from "next/link"
 
 const footerLinks = {
   services: [
-    { label: "Gói Ngày", href: "/menu#combos" },
-    { label: "Gói Tuần", href: "/menu#combos" },
-    { label: "Gói Tháng", href: "/menu#combos" },
-    { label: "Thực đơn tuần", href: "/menu#dishes" },
+    { label: "Gói FIT", href: "#" },
+    { label: "Gói FULL", href: "#" },
+    { label: "Gói MEAT", href: "#" },
+    { label: "Gói SLIM", href: "#" },
+    { label: "Gói CHAY", href: "#" },
   ],
   company: [
-    { label: "Về chúng tôi", href: "/about-us" },
+    { label: "Về chúng tôi", href: "#about" },
     { label: "Blog", href: "#" },
     { label: "Tuyển dụng", href: "#" },
     { label: "Liên hệ", href: "#contact" },
@@ -37,13 +38,13 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
               <div className="w-10 h-10 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">R</span>
+                <span className="text-primary-foreground font-bold text-lg">F</span>
               </div>
-              <span className="text-xl font-bold text-card">RediBowl</span>
+              <span className="text-xl font-bold text-card">FITFOOD</span>
             </Link>
             <p className="text-card/70 leading-relaxed mb-6 max-w-sm">
-              Redi to Eat. Redi to Live. 
-              Giải pháp bữa ăn lành mạnh giao tận nơi ký túc xá cho sinh viên VGU.
+              Fitfood VN - Nhà cung cấp gói ăn healthy lớn nhất Saigon. 
+              Giải pháp bữa ăn lành mạnh giao tận nơi cho lối sống khỏe mạnh.
             </p>
             
             {/* Contact Info */}
@@ -125,7 +126,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-card/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-card/60 text-sm">
-            © 2026 RediBowl Vietnam. All rights reserved.
+            © 2024 Fitfood Vietnam. All rights reserved.
           </p>
           <p className="text-card/60 text-sm">
             Made with ❤️ in Saigon

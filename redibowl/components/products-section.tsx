@@ -1,5 +1,6 @@
 "use client"
 
+import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 
@@ -128,15 +129,17 @@ export function ProductsSection() {
                 <p className="text-muted-foreground mb-4">{product.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold text-primary">{product.price}</span>
-                  <Button 
-                    className={`rounded-full ${
-                      product.popular 
-                        ? "bg-primary hover:bg-primary/90 text-primary-foreground" 
-                        : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
-                    }`}
-                  >
-                    Đặt ngay
-                  </Button>
+                  <Link href="/order">
+                    <Button 
+                      className={`rounded-full ${
+                        product.popular 
+                          ? "bg-primary hover:bg-primary/90 text-primary-foreground" 
+                          : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
+                      }`}
+                    >
+                      Đặt ngay
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -145,13 +148,15 @@ export function ProductsSection() {
 
         {/* View All Button */}
         <div className="text-center mt-12">
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="rounded-full px-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
-          >
-            Xem tất cả sản phẩm
-          </Button>
+          <Link href="/order">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="rounded-full px-8 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            >
+              Xem tất cả sản phẩm
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

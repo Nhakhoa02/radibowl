@@ -3,7 +3,7 @@ import { Be_Vietnam_Pro, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const beVietnamPro = Be_Vietnam_Pro({ 
+const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-be-vietnam"

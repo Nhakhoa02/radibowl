@@ -34,8 +34,8 @@ export function PartnersSection() {
         <div className="relative flex overflow-hidden group border-y border-white/10">
           <div className="flex animate-scroll-right whitespace-nowrap py-0">
             {[...partners, ...partners, ...partners, ...partners, ...partners].map((partner, i) => (
-              <div 
-                key={`${partner.name}-${i}`} 
+              <div
+                key={`${partner.name}-${i}`}
                 className="flex items-center justify-center shrink-0 w-64 h-32 md:h-40 border-r border-white/10 hover:bg-white/5 transition-colors"
               >
                 <img
@@ -52,8 +52,8 @@ export function PartnersSection() {
         <div className="relative flex overflow-hidden group border-b border-white/10">
           <div className="flex animate-scroll-right whitespace-nowrap py-0">
             {[...clients, ...clients, ...clients, ...clients, ...clients].map((client, i) => (
-              <div 
-                key={`${client.name}-${i}`} 
+              <div
+                key={`${client.name}-${i}`}
                 className="flex items-center justify-center shrink-0 w-64 h-32 md:h-40 border-r border-white/10 hover:bg-white/5 transition-colors"
               >
                 <img
