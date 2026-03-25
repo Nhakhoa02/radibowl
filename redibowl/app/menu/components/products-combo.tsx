@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Check } from "lucide-react"
+import Link from "next/link"
 
 const combos = [
   {
@@ -64,20 +65,19 @@ export function ProductsSection() {
         {/* Combos Grid */}
         <div className="grid md:grid-cols-3 gap-8">
           {combos.map((combo) => (
-            <div 
-              key={combo.name} 
-              className={`relative flex flex-col p-8 rounded-3xl border transition-all hover:shadow-2xl ${
-                combo.popular 
-                ? "bg-background border-primary shadow-xl ring-4 ring-primary/5 scale-105 z-10" 
+            <div
+              key={combo.name}
+              className={`relative flex flex-col p-8 rounded-3xl border transition-all hover:shadow-2xl ${combo.popular
+                ? "bg-background border-primary shadow-xl ring-4 ring-primary/5 scale-105 z-10"
                 : "bg-background/50 border-border"
-              }`}
+                }`}
             >
               {combo.badge && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 bg-primary text-primary-foreground rounded-full text-sm font-bold shadow-lg">
                   {combo.badge}
                 </div>
               )}
-              
+
               <div className="mb-8">
                 <h3 className="text-2xl font-bold text-foreground mb-2">{combo.name}</h3>
                 <p className="text-muted-foreground">{combo.description}</p>
@@ -98,15 +98,14 @@ export function ProductsSection() {
                 ))}
               </ul>
 
-              <Button 
+              <Button
                 size="lg"
-                className={`w-full rounded-full font-bold h-12 ${
-                  combo.popular 
-                  ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20" 
+                className={`w-full rounded-full font-bold h-12 ${combo.popular
+                  ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
                   : "bg-secondary hover:bg-secondary/80 text-secondary-foreground"
-                }`}
+                  }`}
               >
-                Đặt gói này
+                <Link href="/order">Đặt gói này</Link>
               </Button>
             </div>
           ))}

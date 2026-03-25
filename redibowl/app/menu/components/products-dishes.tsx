@@ -3,59 +3,64 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Flame } from "lucide-react"
+import Link from "next/link"
+
+const onClick = () => {
+
+}
 
 const dishes = [
   {
     id: 1,
-    name: "Cơm Gà Nướng",
-    description: "Gà nướng mật ong, cơm gạo lứt, rau luộc, salad dưa leo. Protein cao, ít mỡ.",
-    calories: "~520 kcal",
-    price: "39,000đ",
+    name: "Salad Gà Xé",
+    description: "Ức gà, xà lách, cà rốt, dưa leo, bắp, khoai lang, sốt (Yogurt/ Mayo)",
+    calories: " ~500 kcal | ~23g protein",
+    price: "40,000đ",
     image: "/product-fit1.jpg",
     badge: "Best seller",
   },
   {
     id: 2,
-    name: "Cơm Bò Áp Chảo",
-    description: "Bò áp chảo sốt tiêu, cơm trắng, bông cải xanh, cà rốt luộc.",
-    calories: "~580 kcal",
-    price: "45,000đ",
+    name: "Gà Teriyaki + Lức Nâu",
+    description: "Ức gà, gạo lứt, Broccoli, cà rốt, dầu, sốt Teriyaki, xì dầu, đường, tỏi, nước",
+    calories: "~540 kcal | ~23g protein",
+    price: "40,000đ",
     image: "/product-meat.jpg",
     badge: "Mới",
   },
   {
     id: 3,
-    name: "Cơm Cá Hồi Sốt Chanh",
-    description: "Cá hồi hấp sốt chanh dầu, rau quinoa, salad hỗn hợp, omega-3 dồi dào.",
-    calories: "~490 kcal",
-    price: "49,000đ",
+    name: "Phở trộn bò (Beef mix gà)",
+    description: "Thịt bò, ức gà, bánh phở, rau sống, dầu, sốt trộn, nước mắm, chanh, đường, tỏi",
+    calories: "~550 kcal | ~24g protein",
+    price: "40,000đ",
     image: "/product-slim.jpg",
     badge: null,
   },
   {
     id: 4,
-    name: "Bowl Trứng & Đậu Hũ",
-    description: "Trứng luộc, đậu hũ sốt tương, gạo lứt, rau muống xào tỏi. Thích hợp ăn chay.",
-    calories: "~430 kcal",
-    price: "32,000đ",
+    name: "Kimbap gà áp chảo (gạo lức)",
+    description: "Ức gà, gạo lứt, trứng, cà rốt, dưa leo, rong biển, dầu, sốt (Yogurt/ Mayo)",
+    calories: "~520–540 kcal | ~23g protein",
+    price: "40,000đ",
     image: "/product-chay.jpg",
     badge: "Chay",
   },
   {
     id: 5,
-    name: "Cơm Tôm Sốt Cà",
-    description: "Tôm chiên sốt cà chua, cơm gạo lứt, đậu que luộc, salad.",
-    calories: "~510 kcal",
-    price: "42,000đ",
+    name: "Nui xào thịt băm",
+    description: "Thịt băm, nui, cà rốt, đậu que, bắp, dầu, sốt (Tương cà + xì dầu nhẹ)",
+    calories: "~540–560 kcal | ~22g protein",
+    price: "40,000đ",
     image: "/product-full.jpg",
     badge: null,
   },
   {
     id: 6,
-    name: "Salad Gà Quinoa",
-    description: "Ức gà hấp, hạt quinoa, rau lá xanh, cà chua bi, sốt mù tạt mật ong.",
-    calories: "~380 kcal",
-    price: "43,000đ",
+    name: "Gà sốt tỏi rau củ",
+    description: "Ức gà, gạo lứt, broccoli, cà rốt, đậu que, dầu, sốt tỏi, xì dầu, đường, tỏi, nước",
+    calories: "~540–560 kcal | ~23g protein",
+    price: "40,000đ",
     image: "/product-lunch.jpg",
     badge: "Low-carb",
   },
@@ -78,8 +83,8 @@ export function ProductsDishes() {
         {/* Dishes Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {dishes.map((dish) => (
-            <div 
-              key={dish.id} 
+            <div
+              key={dish.id}
               className="group bg-card rounded-3xl overflow-hidden border border-border shadow-sm hover:shadow-xl transition-all duration-300"
             >
               {/* Image Area */}
@@ -114,12 +119,12 @@ export function ProductsDishes() {
                   {dish.description}
                 </p>
                 <div className="flex items-center gap-3 pt-4 border-t border-border/50">
-                   <Button className="flex-1 rounded-full font-bold shadow-sm shadow-primary/20">
-                     Chọn món này
-                   </Button>
-                   <Button variant="outline" className="rounded-full px-4 hover:bg-secondary border-border/50">
-                     Chi tiết
-                   </Button>
+                  <Button className="flex-1 rounded-full font-bold shadow-sm shadow-primary/20">
+                    <Link href="/order">Chọn món này</Link>
+                  </Button>
+                  <Button variant="outline" className="rounded-full px-4 hover:bg-secondary border-border/50">
+                    Chi tiết
+                  </Button>
                 </div>
               </div>
             </div>
@@ -128,9 +133,9 @@ export function ProductsDishes() {
 
         {/* Action Button */}
         <div className="text-center mt-12">
-          <Button 
-            size="lg" 
-            variant="ghost" 
+          <Button
+            size="lg"
+            variant="ghost"
             className="rounded-full text-primary hover:bg-primary/10 font-bold"
           >
             Tải PDF Thực đơn Tuần tới

@@ -120,7 +120,7 @@ export function AddDishesStep({
       <div className="space-y-4">
         {dishes.map((dish) => {
           const quantity = getQuantity(dish.id)
-          
+
           return (
             <div
               key={dish.id}

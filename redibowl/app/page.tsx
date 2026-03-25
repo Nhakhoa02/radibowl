@@ -21,7 +21,7 @@ export default function Home() {
       <CombosSection />
       <EnvironmentSection />
       <CharitySection />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <PartnersSection />
       <Footer />
     </main>

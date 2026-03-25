@@ -11,7 +11,7 @@ export default function AboutUsPage() {
       <div className="pt-20"> {/* Offset for header */}
         <AbHero />
         <AbTeams />
-        <AbStrength />
+        {/* <AbStrength /> */}
       </div>
       <Footer />
     </main>
