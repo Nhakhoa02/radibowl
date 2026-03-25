@@ -9,7 +9,7 @@ const footerLinks = {
     { label: "Thực đơn tuần này", href: "/menu" },
   ],
   company: [
-    { label: "Về chúng tôi", href: "/about" },
+    { label: "Về chúng tôi", href: "/about-us" },
     // { label: "Blog", href: "#" },
     // { label: "Tuyển dụng", href: "#" },
     { label: "Liên hệ", href: "#contact" },
