@@ -25,7 +25,7 @@ const combos = [
     price: "185k / tuần",
     features: [
       "5 bữa liên tiếp (T2-T6)",
-      "Tiết kiệm ~10% so với lẻ",
+      // "Tiết kiệm ~10% so với lẻ",
       "Thực đơn xoay vòng",
       "Thông báo giao hàng"
     ],
@@ -38,7 +38,7 @@ const combos = [
     price: "680k / tháng",
     features: [
       "20 bữa trọn tháng",
-      "Tiết kiệm ~15%",
+      // "Tiết kiệm ~15%",
       "Ưu tiên menu mới",
       "Hỗ trợ điều chỉnh khẩu vị"
     ],
@@ -68,8 +68,8 @@ export function CombosSection() {
               <div
                 key={combo.name}
                 className={`relative flex flex-col p-10 rounded-[2.5rem] border transition-all duration-500 hover:shadow-2xl hover:-translate-y-3 text-center ${combo.popular
-                    ? "bg-white border-primary shadow-2xl scale-105 z-10"
-                    : "bg-white/5 border-white/10 text-white"
+                  ? "bg-white border-primary shadow-2xl scale-105 z-10"
+                  : "bg-white/5 border-white/10 text-white"
                   }`}
               >
                 {combo.badge && (
@@ -115,8 +115,8 @@ export function CombosSection() {
                   asChild
                   size="lg"
                   className={`w-full rounded-2xl font-black h-16 text-xl transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] ${combo.popular
-                      ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl shadow-primary/30"
-                      : "bg-white text-secondary hover:bg-white/90 shadow-lg"
+                    ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-xl shadow-primary/30"
+                    : "bg-white text-secondary hover:bg-white/90 shadow-lg"
                     }`}
                 >
                   <Link href="/menu">Khám Phá Menu</Link>

@@ -23,9 +23,9 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { icon: Facebook, href: "https://facebook.com/redibowlvn", label: "Facebook" },
-  { icon: Instagram, href: "https://instagram.com/redibowlvn", label: "Instagram" },
-  { icon: Youtube, href: "https://youtube.com/redibowlvn", label: "Youtube" },
+  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61578661955656", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/redibowl/", label: "Instagram" },
+  // { icon: Youtube, href: "https://youtube.com/redibowlvn", label: "Youtube" },
 ]
 
 export function Footer() {
