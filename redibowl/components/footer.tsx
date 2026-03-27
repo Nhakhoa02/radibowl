@@ -52,9 +52,9 @@ export function Footer() {
                 <Phone className="w-5 h-5" />
                 090 123 4567
               </a>
-              <a href="mailto:info@redibowl.vn" className="flex items-center gap-3 text-card/80 hover:text-primary transition-colors">
+              <a href="mailto:redibowl4@gmail.com" className="flex items-center gap-3 text-card/80 hover:text-primary transition-colors">
                 <Mail className="w-5 h-5" />
-                info@redibowl.vn
+                redibowl4@gmail.com
               </a>
               <div className="flex items-start gap-3 text-card/80">
                 <MapPin className="w-5 h-5 shrink-0 mt-0.5" />
