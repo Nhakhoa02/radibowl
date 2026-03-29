@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 
 const navLinks = [
-  { href: "/about-us", label: "Về chúng tôi" },
+  // { href: "/about-us", label: "Về chúng tôi" },
   { href: "/menu", label: "Thực đơn" },
   // { href: "#products", label: "Gói ăn" },
   { href: "/#how-it-works", label: "Cách đặt hàng" },
